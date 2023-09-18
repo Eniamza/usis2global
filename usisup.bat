@@ -1,3 +1,3 @@
 git add . 
-git commit -m 'scheduled commit'
+git commit -m "scheduled commit"
 git push
