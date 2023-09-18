@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid white; /* Optional: Add a border to separate grid cells */
+  }
+  
+  /* Style the table cells */
+  td, th {
+    border: 1px solid white; /* Optional: Add cell borders */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Set the background color to black */
+  body {
+    background-color: black;
+  }
+  
+  /* Set the text color to yellow */
+  td, th {
+    color: yellow;
+  }
