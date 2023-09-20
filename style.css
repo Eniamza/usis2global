@@ -17,6 +17,10 @@ table {
   }
   
   /* Set the text color to yellow */
-  td, th {
+  td, th, h1 , h2, h3 {
     color: yellow;
+  }
+
+  h1 , h2 , h3 {
+    text-align: center;
   }
