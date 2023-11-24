@@ -8,7 +8,7 @@ table {
   td, th {
     border: 1px solid white; /* Optional: Add cell borders */
     padding: 8px;
-    text-align: left;
+    text-align: center;
   }
   
   /* Set the background color to black */
