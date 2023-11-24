@@ -1,7 +1,6 @@
 async function execute(){
-        const usisdump = await fetch("./usis.json");
-        usisdata = await usisdump.json()
-
+        let usisdata = await fetch("https://usis-cdn.eniamza.com/usisdump.json");
+        usisdata = await usisdata.json() 
         usisdata.sort(function(a, b) {
                 return a.courseCode.localeCompare(b.courseCode);
              });
