@@ -24,3 +24,22 @@ table {
   h1 , h2 , h3 {
     text-align: center;
   }
+
+ /* Style for the search box */
+#searchInput {
+  width: 70%;            /* Set the width as desired */
+  padding: 10px;         
+  margin: 0 auto 20px;   /* Auto margin for horizontal centering and margin below */
+  border: 2px solid white; 
+  background-color: black;
+  color: yellow;
+  font-size: 16px;
+  display: block;        /* Make sure the input is a block-level element */
+}
+
+/* Adjust the placeholder color */
+#searchInput::placeholder {
+  color: #ccc;
+  text-align: center;
+}
+
