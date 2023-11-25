@@ -28,7 +28,7 @@ async function execute(){
                 
                 values.forEach(item => {
                         let td = document.createElement("td")
-                        td.innerText = String(item).replace(",","\n")
+                        td.innerText = String(item).replaceAll(",","\n")
                         tr.appendChild(td)
                 })
 
