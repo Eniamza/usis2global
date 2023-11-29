@@ -17,24 +17,24 @@
         <!-- Type of content -->
         <meta property="og:type" content="website" />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="./favicon.svg">
 </head>
-<body>
+<body class="bg-gray-900">
 
-    <h1>USIS Unlocked 2.0</h1>
-    <div id="tableContainer">
-    <input type="text" id="searchInput" placeholder="Enter Couse Code... e.g - CSE">
-    <table id="table">
+    <h1 class="text-center text-yellow-400 font-serif text-3xl p-8">USIS Unlocked 2.0</h1>
+    <div class="space-y-5" id="tableContainer">
+    <input class="transition-all bg-slate-700 text-white flex items-center w-2/3 text-center mx-auto shadow-white rounded-xl border-y-[1px] border-y-blue-900 border-x-2 border-x-blue-600 p-3 placeholder-gray-500 focus:border-y-2 focus:border-y-blue-400 focus:outline-0" type="text" id="searchInput" placeholder="Enter Couse Code... e.g - CSE">
+    <table id="table" class="text-white border-2 border-gray-400 w-[96%] mr-auto ml-auto">
         <thead>
             <tr>
-                <th>Course Code</th>
-                <th>Fac. Init.</th>
-                <th>Seat Cap.</th>
-                <th>Booked</th>
-                <th>Available</th>
-                <th>Class Schedule</th>
-                <th>Lab Schedule</th>
+                <th class="border-2 border-gray-400 text-center p-3">Course Code</th>
+                <th class="border-2 border-gray-400 text-center p-3">Fac. Init.</th>
+                <th class="border-2 border-gray-400 text-center p-3">Seat Cap.</th>
+                <th class="border-2 border-gray-400 text-center p-3">Booked</th>
+                <th class="border-2 border-gray-400 text-center p-3">Available</th>
+                <th class="border-2 border-gray-400 text-center p-3">Class Schedule</th>
+                <th class="border-2 border-gray-400 text-center p-3">Lab Schedule</th>
             </tr>
         </thead>
     </table>

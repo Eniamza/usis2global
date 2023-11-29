@@ -33,6 +33,9 @@ async function execute() {
     
             values.forEach(item => {
                 let td = document.createElement("td");
+                let classesAdd = ["border-2","border-gray-400","text-center","p-3"]
+                td.classList.add(...classesAdd)
+
                 td.innerText = item;
                 tr.appendChild(td);
             });

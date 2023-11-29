@@ -1,5 +1,17 @@
 {
   "dependencies": {
     "tailwindcss": "^3.3.5"
-  }
+  },
+  "name": "usis2global",
+  "version": "2.1.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./public/css/style.css --minify",
+    "watch": "tailwindcss -i ./src/styles.css -o ./public/css/style.css --watch",
+    "start": "live-server public"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
