@@ -25,6 +25,7 @@ let debounceTimeout;
 function debounceSearch() {
     clearTimeout(debounceTimeout);
     debounceTimeout = setTimeout(searchTable, 1); // 1000ms = 1 second
+    window.scrollTo(0,0)
 }
 
 document.getElementById('searchInput').addEventListener('keyup', debounceSearch);
