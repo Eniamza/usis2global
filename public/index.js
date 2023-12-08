@@ -18,12 +18,16 @@ async function execute() {
             const filteredLabSchedule = classLabScheduleArray.filter(labSchedule => {
                 return !classScheduleArray.includes(labSchedule);
             });
+
+            let preReq = element.preRequisiteCourses
+            preReq = preReq.replaceAll(",","\n")
     
             let tr = document.createElement("tr");
     
             let values = [
                 element.courseDetails,
                 element.empShortName,
+                preReq,
                 element.defaultSeatCapacity,
                 element.totalFillupSeat,
                 element.availableSeat,
