@@ -32,7 +32,8 @@ async function execute() {
                 element.totalFillupSeat,
                 element.availableSeat,
                 classScheduleArray.join("\n"),
-                filteredLabSchedule.join("\n")
+                filteredLabSchedule.join("\n"),
+                element.dayNo
             ];
     
             values.forEach(item => {
