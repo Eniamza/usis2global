@@ -2,7 +2,7 @@ async function execute() {
         let usisdata = await fetch("https://usis-cdn.eniamza.com/usisdump.json");
         usisdata = await usisdata.json();
         usisdata.sort(function(a, b) {
-            return a.courseCode.localeCompare(b.courseCode);
+            return a.courseDetails.localeCompare(b.courseDetails);
         });
     
         console.log(usisdata[0]);
