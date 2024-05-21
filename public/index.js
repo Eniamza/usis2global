@@ -12,12 +12,12 @@ async function execute() {
         usisdata.forEach(element => {
 
             // const classScheduleArray = element.classSchedule.split(/,\s*/);
-            const classLabScheduleArray = element.classLabSchedule.split(/,\s*/);
+            // const classLabScheduleArray = element.classLabSchedule.split(/,\s*/);
     
 
-            const filteredLabSchedule = classLabScheduleArray.filter(labSchedule => {
-                return !classScheduleArray.includes(labSchedule);
-            });
+            // const filteredLabSchedule = classLabScheduleArray.filter(labSchedule => {
+            //     return !classScheduleArray.includes(labSchedule);
+            // });
 
             let preReq = element.preRequisiteCourses
             preReq = preReq.replaceAll(",","\n")
@@ -31,8 +31,8 @@ async function execute() {
                 element.defaultSeatCapacity,
                 element.totalFillupSeat,
                 element.defaultSeatCapacity - element.totalFillupSeat,
-                classScheduleArray.join("\n"),
-                filteredLabSchedule.join("\n"),
+                // classScheduleArray.join("\n"),
+                // filteredLabSchedule.join("\n"),
                 // element.dayNo
             ];
     
