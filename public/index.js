@@ -1,5 +1,5 @@
 async function execute() {
-        let usisdata = await fetch("https://usis-cdn.eniamza.com/usisdump.json");
+        let usisdata = await fetch("https://usis-cdn.eniamza.com/old-usisdump.json");
         usisdata = await usisdata.json();
         usisdata.sort(function(a, b) {
             return a.courseDetails.localeCompare(b.courseDetails);
@@ -11,7 +11,7 @@ async function execute() {
     
         usisdata.forEach(element => {
 
-            const classScheduleArray = element.classSchedule.split(/,\s*/);
+            // const classScheduleArray = element.classSchedule.split(/,\s*/);
             const classLabScheduleArray = element.classLabSchedule.split(/,\s*/);
     
 
@@ -33,7 +33,7 @@ async function execute() {
                 element.defaultSeatCapacity - element.totalFillupSeat,
                 classScheduleArray.join("\n"),
                 filteredLabSchedule.join("\n"),
-                element.dayNo
+                // element.dayNo
             ];
     
             values.forEach(item => {
