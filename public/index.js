@@ -31,7 +31,7 @@ async function execute() {
                 preReq,
                 element.defaultSeatCapacity,
                 element.totalFillupSeat,
-                element.defaultSeatCapacity - element.availableSeat,
+                element.element.availableSeat,
                 classScheduleArray.join("\n"),
                 // filteredLabSchedule.join("\n"),
                 // element.dayNo
