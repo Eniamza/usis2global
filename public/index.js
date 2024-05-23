@@ -12,7 +12,8 @@ async function execute() {
         usisdata.forEach(element => {
 
             // const classScheduleArray = element.classSchedule.split(/,\s*/);
-            // const classLabScheduleArray = element.classLabSchedule.split(/,\s*/);
+            // const classLabScheduleArray = element.classLabSchedule.split(/\n/);
+            const classScheduleArray = element.classLabSchedule.split(/\n/);
     
 
             // const filteredLabSchedule = classLabScheduleArray.filter(labSchedule => {
@@ -31,7 +32,7 @@ async function execute() {
                 element.defaultSeatCapacity,
                 element.totalFillupSeat,
                 element.defaultSeatCapacity - element.totalFillupSeat,
-                // classScheduleArray.join("\n"),
+                classScheduleArray.join("\n"),
                 // filteredLabSchedule.join("\n"),
                 // element.dayNo
             ];
