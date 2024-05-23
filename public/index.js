@@ -28,7 +28,7 @@ async function execute() {
             let values = [
                 element.courseDetails,
                 element.empShortName,
-                preReq,
+                // preReq,
                 element.defaultSeatCapacity,
                 element.totalFillupSeat,
                 element.availableSeat,
