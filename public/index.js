@@ -32,6 +32,8 @@ async function execute() {
     
         let table = document.getElementById("table");
 
+        table.querySelectorAll("tr:not(:first-child)").forEach(row => row.remove());
+
         let lastUpdatedElement = document.getElementById("lastUpdatedTime");
         lastUpdatedElement.innerText = `Last Updated: ${formattedTime}`;
     
@@ -75,7 +77,15 @@ async function execute() {
     
             table.appendChild(tr);
         });
+
+    // Reapply the search filter after updating the table
+    searchTable();
     }
     
-    execute();
+    function startPeriodicFetch() {
+        execute(); // Initial fetch
+        setInterval(execute, 120000); // Fetch every 60 seconds
+    }
+    
+    startPeriodicFetch();
     
