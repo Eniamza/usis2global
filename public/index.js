@@ -62,8 +62,8 @@ async function execute() {
                 element.totalFillupSeat,
                 element.availableSeat,
                 element.classSchedule,
-                // element.LabSchedule,
-                // element.dayNo
+                element.LabSchedule,
+                element.dayNo
             ];
     
             values.forEach(item => {
