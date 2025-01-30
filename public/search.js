@@ -6,10 +6,10 @@ function searchTable() {
     tr = table.getElementsByTagName("tr");
 
     // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
+    for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
         // Get the first and second columns
-        td1 = tr[i].getElementsByTagName("td")[0];
-        td2 = tr[i].getElementsByTagName("td")[2];
+        td1 = tr[i].getElementsByTagName("td")[0]; // Course Code
+        td2 = tr[i].getElementsByTagName("td")[1]; // Fac. Init.
         if (td1 || td2) {
             txtValue1 = td1 ? (td1.textContent || td1.innerText) : "";
             txtValue2 = td2 ? (td2.textContent || td2.innerText) : "";
