@@ -81,6 +81,12 @@ async function execute() {
         // let lastUpdated = usisdata.lastUpdated;
         // const formattedTime = formatTimestamp(lastUpdated);
         // usisdata = usisdata.data;
+
+        usisdata.sort(function(a, b) {
+            let courseA = `${a.courseCode}-${a.sectionName}`;
+            let courseB = `${b.courseCode}-${b.sectionName}`;
+            return courseA.localeCompare(courseB);
+        });
     
         console.log(usisdata);
     
