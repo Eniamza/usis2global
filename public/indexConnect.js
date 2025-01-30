@@ -82,7 +82,7 @@ async function execute() {
         // const formattedTime = formatTimestamp(lastUpdated);
         // usisdata = usisdata.data;
     
-        console.log(usisdata[0]);
+        console.log(usisdata);
     
         let table = document.getElementById("table");
 
@@ -115,6 +115,13 @@ async function execute() {
             // preReq = preReq.replaceAll(",","\n")
 
             let courseDetails = `${element.courseCode}-[${element.sectionName}]`
+            let finalExamDetail = ""
+            console.log(element)
+            if (element.sectionSchedule !== null){
+                finalExamDetail = element.sectionSchedule.finalExamDetail
+            } else {
+                finalExamDetail = "Not Available"
+            }
     
             let tr = document.createElement("tr");
     
@@ -127,7 +134,7 @@ async function execute() {
                 `${element.capacity - element.consumedSeat}`,
                 classScheduleArray.join("\n"), //Class Schedule 
                 labScheduleArray.join("\n"), //Lab Schedule
-                element.sectionSchedule.finalExamDetail
+                finalExamDetail
             ];
     
             values.forEach(item => {
