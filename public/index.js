@@ -61,8 +61,8 @@ async function execute() {
                 element.defaultSeatCapacity,
                 element.totalFillupSeat,
                 element.availableSeat,
-                element.classSchedule,
-                element.LabSchedule,
+                element.classSchedule.join("\n"),
+                element.LabSchedule.join("\n"),
                 element.dayNo
             ];
     
