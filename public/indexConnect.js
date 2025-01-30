@@ -81,9 +81,6 @@ async function execute() {
         // let lastUpdated = usisdata.lastUpdated;
         // const formattedTime = formatTimestamp(lastUpdated);
         // usisdata = usisdata.data;
-        usisdata.sort(function(a, b) {
-            return a.courseCode.localeCompare(b.courseCode);
-        });
     
         console.log(usisdata[0]);
     
@@ -123,7 +120,6 @@ async function execute() {
     
             let values = [
                 courseDetails,
-                "",
                 element.faculties,
                 // preReq,
                 element.capacity,
