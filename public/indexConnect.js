@@ -117,8 +117,26 @@ async function execute() {
             }
     
 
-            // let preReq = element.preRequisiteCourses
-            // preReq = preReq.replaceAll(",","\n")
+            let preReq = element.prerequisiteCourses
+            // (CSE110) OR (CSE161) OR (EEE103) OR (ECE103) , Alternatively (CSE111 AND CSE230) Or it might be (CSE110)
+            if (element.prerequisiteCourses !== null){
+                if (element.prerequisiteCourses.includes("AND")){
+                    preReq = element.prerequisiteCourses.split("AND").map(item => {
+                        return item.replace("(","").replace(")","")
+                    }).join("+\n")
+                }
+                else if (element.prerequisiteCourses.includes("OR")){
+                    preReq = element.prerequisiteCourses.split("OR").map(item => {
+                        return item.replace("(","").replace(")","")
+                    }).join("/\n")
+                }
+                else {
+                    preReq = element.prerequisiteCourses.replace("(","").replace(")","")
+                }
+            }
+            else {
+                preReq = ""
+            }
 
             let courseDetails = `${element.courseCode}-[${element.sectionName}]`
             let finalExamDetail = ""
@@ -134,7 +152,7 @@ async function execute() {
             let values = [
                 courseDetails,
                 element.faculties,
-                // preReq,
+                preReq,
                 element.capacity,
                 element.consumedSeat,
                 `${element.capacity - element.consumedSeat}`,
