@@ -105,14 +105,14 @@ async function execute() {
             let labScheduleArray = []
             if(element.sectionSchedule !== null){
                 classScheduleArray = element.sectionSchedule.classSchedules.map(schedule => {
-                    return `${schedule.day} ${convertTime24to12(schedule.startTime)} - ${convertTime24to12(schedule.endTime)}`;
+                    return `${schedule.day} ${convertTime24to12(schedule.startTime)} - ${convertTime24to12(schedule.endTime)} - ${element.roomName}`;
                 });
                 
             }
 
             if(element.labSchedules !== null){
                 labScheduleArray = element.labSchedules.map(schedule => {
-                    return `${schedule.day} ${convertTime24to12(schedule.startTime)} - ${convertTime24to12(schedule.endTime)}`;
+                    return `${schedule.day} ${convertTime24to12(schedule.startTime)} - ${convertTime24to12(schedule.endTime)} - ${element.labRoomName}`;
                 });
             }
     
