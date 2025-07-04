@@ -88,7 +88,7 @@ async function execute() {
             return courseA.localeCompare(courseB);
         });
     
-        console.log(usisdata);
+        // console.log(usisdata);
     
         let table = document.getElementById("table");
 
@@ -140,7 +140,7 @@ async function execute() {
 
             let courseDetails = `${element.courseCode}-[${element.sectionName}]`
             let finalExamDetail = ""
-            console.log(element)
+            // console.log(element)
             if (element.sectionSchedule !== null){
                 finalExamDetail = element.sectionSchedule.finalExamDetail
             } else {

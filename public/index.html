@@ -54,12 +54,23 @@
 </div>
 
 <div class="flex justify-center">
-    <button id="filterButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded py-2 mb-3 flex items-center">
-        Filter
+    <button id="filterButton" class="peer bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded py-2 mb-3 flex items-center">
+        Filters
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
         </svg>
     </button>
+</div>
+
+<div id="filteringSection" class="transition-all transition-discrete hidden">
+    <div id="availableSeatToggle" class="flex justify-center items-center my-4">
+        <label class="inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <span class="me-3 text-sm font-medium text-gray-900 dark:text-gray-300">Hide Filled Sections?</span>
+            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+            
+        </label>
+    </div>
 </div>
 
 <div class="space-y-5" id="tableContainer">
@@ -86,4 +97,5 @@
 
 <script src="./indexConnect.js"></script>
 <script src="./search.js"></script>
+<script src="./filters.js"></script>
 </html>
