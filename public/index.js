@@ -82,10 +82,7 @@ async function execute() {
     searchTable();
     }
     
-    function startPeriodicFetch() {
-        execute(); // Initial fetch
-        setInterval(execute, 120000); // Fetch every 60 seconds
-    }
-    
-    startPeriodicFetch();
+
+execute(); // Initial fetch
+
     
