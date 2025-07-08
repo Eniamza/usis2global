@@ -11,7 +11,8 @@ function filter() {
 
     let filterState = {
         search: "",
-        hideFilled: false
+        hideFilled: false,
+        onlyShowCourses: []
     }
 
     input = document.getElementById("searchInput");
@@ -19,19 +20,17 @@ function filter() {
         filterState.search = event.target.value.toUpperCase();
         console.log("Search input changed:", filterState.search);
         debounceSearch();
-
     });
 
     // Toggle the hide filled sections functionality
     availableSeatToggle.addEventListener('change', (event) => {
         filterState.hideFilled = event.target.checked;
         console.log("Hide filled sections:", filterState.hideFilled);
-    
     });
 
-    // Apply the filters to the table
-    document.getElementById('applyFiltersButton').addEventListener('click', () => {
-        console.log("Applying filters:", filterState);
+    // Separated filter applying function
+    function applyFilters(filters) {
+        console.log("Applying filters:", filters);
         const table = document.getElementById("table");
         const rows = table.getElementsByTagName("tr");
 
@@ -43,21 +42,48 @@ function filter() {
 
             let showRow = true;
 
-            if (filterState.search) {
+            if (filters.search) {
                 const courseCodeText = courseCodeCell ? (courseCodeCell.textContent || courseCodeCell.innerText) : "";
                 const facultyText = facultyCell ? (facultyCell.textContent || facultyCell.innerText) : "";
-                showRow = courseCodeText.toUpperCase().includes(filterState.search) || facultyText.toUpperCase().includes(filterState.search);
+                showRow = courseCodeText.toUpperCase().includes(filters.search) || facultyText.toUpperCase().includes(filters.search);
             }
 
-            if (filterState.hideFilled && availableSeatCell) {
+            if (filters.hideFilled && availableSeatCell) {
                 const availableSeats = parseInt(availableSeatCell.textContent || availableSeatCell.innerText, 10);
                 showRow = showRow && availableSeats > 0;
             }
 
             row.classList.toggle('hidden', !showRow);
         }
+    }
+
+    // Apply filters button event handler
+    document.getElementById('applyFiltersButton').addEventListener('click', () => {
+        applyFilters(filterState);
     });
 
+    document.getElementById('resetFiltersButton').addEventListener('click', () => {
+        // Reset filter state
+        filterState.search = "";
+        filterState.hideFilled = false;
+        filterState.onlyShowCourses = [];
+        
+        // Reset UI elements
+        document.getElementById("searchInput").value = "";
+        
+        // Reset toggle button - ensure both the checked property and visual state are updated
+        const toggleInput = availableSeatToggle.querySelector('input[type="checkbox"]');
+        toggleInput.checked = false;
+        
+        // For Tailwind toggle components, we need to manually trigger the peer class effect
+        // by dispatching a change event
+        toggleInput.dispatchEvent(new Event('change', { bubbles: true }));
+        
+        // Apply reset filters
+        applyFilters(filterState);
+        console.log("Filters reset");
+    });
+    
 }
 
 // Initialize the filter functionality
