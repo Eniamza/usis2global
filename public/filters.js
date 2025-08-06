@@ -37,6 +37,8 @@ function filter() {
         console.log("Hide filled sections:", filterState.hideFilled);
     });
 
+    // Initialize the select element for faculties to avoid
+    console.log(usisdata[0])
     // Separated filter applying function
     function applyFilters(filters) {
         console.log("Applying filters:", filters);

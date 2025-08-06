@@ -96,13 +96,14 @@ async function execute() {
 
         // let lastUpdatedElement = document.getElementById("lastUpdatedTime");
         // lastUpdatedElement.innerText = `Last Updated: ${formattedTime}`;
-    
+        let facultyArray = [];
         usisdata.forEach(element => {
 
             // const classScheduleArray = element.classSchedule.split(/,\s*/);
             // const classLabScheduleArray = element.classLabSchedule.split(/\n/);
             let classScheduleArray = []
             let labScheduleArray = []
+            
             if(element.sectionSchedule !== null){
                 classScheduleArray = element.sectionSchedule.classSchedules.map(schedule => {
                     return `${schedule.day} ${convertTime24to12(schedule.startTime)} - ${convertTime24to12(schedule.endTime)} - ${element.roomName}`;
@@ -148,7 +149,7 @@ async function execute() {
             }
     
             let tr = document.createElement("tr");
-    
+            facultyArray.push(...element.faculties.split(",").map(faculty => faculty.trim()));
             let values = [
                 courseDetails,
                 element.faculties,
@@ -173,8 +174,16 @@ async function execute() {
             table.appendChild(tr);
         });
 
-    // Reapply the search filter after updating the table
-    searchTable();
+        facultyArray.sort();
+        let facultySet = new Set(facultyArray);
+        let selectElement = document.getElementById("selectCourses");
+
+        facultySet.forEach(faculty => {
+            let option = document.createElement("option");
+            option.value = faculty;
+            option.textContent = faculty;
+            selectElement.appendChild(option);
+        });
     }
     
 
