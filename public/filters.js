@@ -15,11 +15,20 @@ function filter() {
         onlyShowCourses: []
     }
 
+    let debounceTimeout;
+
     input = document.getElementById("searchInput");
     input.addEventListener('keyup', (event) => {
         filterState.search = event.target.value.toUpperCase();
         console.log("Search input changed:", filterState.search);
-        debounceSearch();
+        
+        // Clear existing timeout
+        clearTimeout(debounceTimeout);
+        
+        // Set new timeout to apply filters after 300ms delay
+        debounceTimeout = setTimeout(() => {
+            applyFilters(filterState);
+        }, 300);
     });
 
     // Toggle the hide filled sections functionality
