@@ -176,7 +176,7 @@ async function execute() {
 
         facultyArray.sort();
         let facultySet = new Set(facultyArray);
-        let selectElement = document.getElementById("selectCourses");
+        let selectElement = document.getElementById("selectFaculties");
 
         facultySet.forEach(faculty => {
             let option = document.createElement("option");
