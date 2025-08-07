@@ -57,6 +57,7 @@ function filter() {
                 duplicateItemsAllowed: false,
                 searchFloor: 1,
                 searchResultLimit: -1,
+                renderSelectedChoices: 'always',
                 position: 'bottom',
                 shouldSort: false,
                 closeDropdownOnSelect: true,
@@ -84,7 +85,7 @@ function filter() {
                 // Choices uses the great Fuse library for searching. You
                 // can find more options here: https://fusejs.io/api/options.html
                 fuseOptions: {
-                  includeScore: true
+                  includeScore: false
                 },
                 labelId: '',
                 callbackOnInit: null,
@@ -96,7 +97,6 @@ function filter() {
             element.addEventListener('change', (event) => {
                 filterState.onlyShowFaculties = choices.getValue(true); // Get array of selected values
                 console.log("Selected faculties to avoid:", filterState.onlyShowFaculties);
-                applyFilters(filterState);
             });
 
             console.log("Choices.js initialized successfully");
