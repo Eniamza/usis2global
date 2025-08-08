@@ -54,9 +54,9 @@
             <h3 class="pt-3 text-center text-orange-400 font-bold text-xs">We are aiming to launch a fully open-sourced project: BRACU O.R.A.C.L.E <a class="font-bold text-cyan-400 text-decoration-line: underline" target="_blank" rel="noopener noreferrer" href="https://discord.eniamza.com">JOIN THE ARENA🔗</a></h3> 
             
         </div>
-<div class="sticky top-0 shadow mb-3 pb-3 pt-6 bg-gray-900 z-20">
-    <input class="transition-all bg-slate-700 text-white flex items-center w-2/3 text-center mx-auto shadow-white rounded-xl border-y-[1px] border-y-blue-900 border-x-2 border-x-blue-600 p-3 placeholder-gray-500 focus:border-y-2 focus:border-y-blue-400 focus:outline-0" type="text" id="searchInput" placeholder="Enter Course Code or Faculty Initial.. e.g - CSE or FLA">
-</div>
+        <div class="sticky top-0 z-20 bg-gray-900 shadow pb-3 pt-6">
+            <input class="transition-all bg-slate-700 text-white flex items-center w-2/3 text-center mx-auto shadow-white rounded-xl border-y-[1px] border-y-blue-900 border-x-2 border-x-blue-600 p-3 placeholder-gray-500 focus:border-y-2 focus:border-y-blue-400 focus:outline-0" type="text" id="searchInput" placeholder="Enter Course Code or Faculty Initial.. e.g - CSE or FLA">
+          </div>
 
 <div class="flex justify-center z-0">
     <button id="filterButton" class="peer bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded py-2 mb-3 flex items-center">
@@ -84,12 +84,6 @@
         </select>
     </div>
 
-    <!-- <div class="mb-4 hidden" id="avoidFacultyContainer">
-        <label class="block text-sm font-medium text-gray-300 mb-1">Avoid Faculties:</label>
-        <select id="avoidFaculties" multiple placeholder="Avoid Faculties..." class="w-full rounded text-black">
-
-        </select>
-    </div>  -->
 
     <!-- Apply Button -->
     <div class="flex justify-center gap-3">
@@ -104,8 +98,8 @@
 </div>
 
 <div class="space-y-5" id="tableContainer">
-    <table id="table" class=" font-semibold table-fixed text-white border-2 border-slate-600 w-full">
-        <thead class="sticky top-[84px] bg-blue-800">
+    <table id="table" class="font-semibold table-fixed text-white border-2 border-slate-600 w-full">
+        <thead class="sticky top-[83px] bg-blue-800 z-10" id="tableHeader">
             <tr>
                 <th class="break-words w-32 border-2 border-gray-400 text-center">Course Code</th>
                 <th class="w-24 border-2 border-gray-400 text-center p-3">Fac. Init.</th>
