@@ -149,7 +149,14 @@ async function execute() {
             }
     
             let tr = document.createElement("tr");
-            facultyArray.push(...element.faculties.split(",").map(faculty => faculty.trim()));
+            console.log(element);
+            if (element.faculties) {
+                    facultyArray.push(...element.faculties.split(",").map(faculty => faculty.trim()));
+            }
+            else {
+                facultyArray.push("TBA");
+                element.faculties = "TBA";
+            }
             let values = [
                 courseDetails,
                 element.faculties,
